@@ -1,0 +1,17 @@
+apiVersion: getambassador.io/v1
+kind:  Mapping
+metadata:
+  name:  simple-service
+spec:
+  prefix: /simple-service/
+  service: simple-service-v1.default
+  weight: 50
+---
+apiVersion: getambassador.io/v1
+kind:  Mapping
+metadata:
+  name:  simple-service-canary
+spec:
+  prefix: /simple-service/
+  service: simple-service-v2.default
+  weight: 50

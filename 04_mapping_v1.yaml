@@ -1,0 +1,7 @@
+apiVersion: getambassador.io/v1
+kind:  Mapping
+metadata:
+  name:  simple-service-v1
+spec:
+  prefix: /simple-service/v1/
+  service: simple-service-v1.default
