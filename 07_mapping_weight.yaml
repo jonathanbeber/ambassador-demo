@@ -5,7 +5,7 @@ metadata:
 spec:
   prefix: /simple-service/
   service: simple-service-v1.default
-  weight: 50
+  weight: 80
 ---
 apiVersion: getambassador.io/v1
 kind:  Mapping
@@ -14,4 +14,4 @@ metadata:
 spec:
   prefix: /simple-service/
   service: simple-service-v2.default
-  weight: 50
+  weight: 20

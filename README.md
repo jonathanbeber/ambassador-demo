@@ -72,7 +72,7 @@ kubectl apply -f 07_mapping_weight.yaml
 
 The [admin ui](http://localhost:8877/ambassador/v0/diag/) will present to mappings with its defined weights. We can test it making multiple http requests to the mapped endpoint:
 ```
-for i in {1..20}; do curl http://localhost:8000/simple-service/; sleep 0.5; echo; done
+for i in {1..20}; do curl http://localhost:8000/simple-service/; echo; done
 ```
 
 ## Change weights
@@ -82,7 +82,7 @@ Let's edit the file [07_mapping_weight.yaml](./07_mapping_weight.yaml) changing 
 Then check if the applied configs are reflected on the [admin ui](http://localhost:8877/ambassador/v0/diag/). Once again, it's possible to check the configuration running multiple requests to the service:
 
 ```
-for i in {1..20}; do curl http://localhost:8000/simple-service/; sleep 0.5; echo; done
+for i in {1..20}; do curl http://localhost:8000/simple-service/; echo; done
 ```
 
 # Headers
@@ -96,7 +96,7 @@ kubectl apply -f 08_mapping_header.yaml
 Check if the mapping is on the [admin ui](http://localhost:8877/ambassador/v0/diag/) and modify your http request to include the header defined on [08_mapping_header.yaml](./08_mapping_header.yaml):
 
 ```
-for i in {1..20}; do curl -H "am-i-a-test: true" http://localhost:8000/simple-service/; sleep 0.5; echo; done
+for i in {1..20}; do curl -H "am-i-a-test: true" http://localhost:8000/simple-service/; echo; done
 ```
 
 # Next steps
